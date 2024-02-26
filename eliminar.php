@@ -1,6 +1,6 @@
 <?php
 
-require 'productos.php';
+require 'Productos.php';
 
 $res = new Productos();
 $codigo = filter_input(INPUT_GET, 'codigo');

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-require 'productos.php';
+require 'Productos.php';
 $productos = new Productos();
 
 $codigo = filter_input(INPUT_GET, 'codigo');

@@ -45,7 +45,6 @@ class Productos extends Conexion
 
   public function post_productos($id, $nombre, $categoria, $precio, $stock)
   {
-
     $sql = "select * from productos where id = :id";
     $resultado = $this->conexion_db->prepare($sql);
     $resultado->bindParam(':id', $id);
@@ -62,9 +61,11 @@ class Productos extends Conexion
       $sentencia->execute();
       $sentencia->closeCursor();
 
-      echo "<script>alert('Producto agregado');window.location='agregar.php';</script>";
+      echo "<p>El producto se ha agregado correctamente.</p>";
+      header("Location: index.php");
+      exit();
     } else {
-      echo "<script>alert('Codigo ya existe');window.location='agregar.php';</script>";
+      echo "<script>alert('El codigo ya existe')</script>";
     }
   }
 
