@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 22, 2024 at 02:41 PM
+-- Generation Time: Feb 27, 2024 at 10:09 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -40,8 +40,11 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `categoria`, `stock`, `precio`) VALUES
-(1, 'Miel de abeja', 'Edulcorante', 40, 3),
-(2, 'Pimienta negra', 'Especias', 5, 1.25);
+(1, 'Camiseta', 'Ropa', 50, 15.99),
+(5, 'Pantalón', 'Ropa', 30, 29.99),
+(7, 'Zapatos deportivos', 'Calzado', 20, 49.99),
+(9, 'Reloj', 'Accesorio', 100, 39.99),
+(10, 'Mochila', 'Accesorio', 40, 24.99);
 
 --
 -- Indexes for dumped tables
@@ -61,7 +64,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT for table `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=339;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

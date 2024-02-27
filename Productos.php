@@ -2,16 +2,13 @@
 
 require 'Conexion.php';
 
-class Productos extends Conexion
-{
+class Productos extends Conexion {
 
-    public function Productos()
-    {
+    public function Productos() {
         parent::__construct();
     }
 
-    public function get_productos()
-    {
+    public function get_productos() {
         $sql = "select * from productos";
         $sentencia = $this->conexion_db->prepare($sql);
         $sentencia->execute();
@@ -20,8 +17,7 @@ class Productos extends Conexion
         return $resultado;
     }
 
-    public function get_producto_id($id)
-    {
+    public function get_producto_id($id) {
         $sql = "select * from productos where id = :id limit 1";
         $sentencia = $this->conexion_db->prepare($sql);
         $sentencia->bindParam(':id', $id);
@@ -31,8 +27,7 @@ class Productos extends Conexion
         return $resultado;
     }
 
-    public function get_producto_name($name)
-    {
+    public function get_producto_name($name) {
         $search = '%' . $name . '%';
         $sql = "select * from productos where nombre like :search";
         $sentencia = $this->conexion_db->prepare($sql);
@@ -43,8 +38,7 @@ class Productos extends Conexion
         return $resultado;
     }
 
-    public function post_productos($id, $nombre, $categoria, $precio, $stock)
-    {
+    public function post_productos($id, $nombre, $categoria, $precio, $stock) {
         $sql = "select * from productos where id = :id";
         $resultado = $this->conexion_db->prepare($sql);
         $resultado->bindParam(':id', $id);
@@ -69,8 +63,7 @@ class Productos extends Conexion
         }
     }
 
-    public function delete_productos($id)
-    {
+    public function delete_productos($id) {
         $sql = "delete from productos where id = :id";
         $sentencia = $this->conexion_db->prepare($sql);
         $sentencia->bindParam(':id', $id);
@@ -78,8 +71,7 @@ class Productos extends Conexion
         $sentencia->closeCursor();
     }
 
-    public function put_producto_id($id, $nombre, $categoria, $precio, $stock)
-    {
+    public function put_producto_id($id, $nombre, $categoria, $precio, $stock) {
         $sql = "update productos set nombre = :nombre, categoria = :categoria, precio = :precio, stock = :stock where id = :id";
         $sentencia = $this->conexion_db->prepare($sql);
         $sentencia->bindParam(':id', $id);
